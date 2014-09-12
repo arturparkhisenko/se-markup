@@ -16,8 +16,8 @@ I prefer [schema.org] because its supported all SE (google,yahoo,yandex,bing)
 * Image
 
 ###Validated by
-*https://www.google.ru/webmasters/tools/richsnippets
-*http://webmaster.yandex.ua/microtest.xml
+* https://www.google.ru/webmasters/tools/richsnippets
+* http://webmaster.yandex.ua/microtest.xml
 
 License
 ----
