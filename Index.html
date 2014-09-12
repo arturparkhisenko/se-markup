@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Schema.org</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="description" content="Schema.org" />
+<style>
+    body {
+        font-family: verdana;
+        color: #061732;
+        padding: 2%;
+    }
+    h1 {
+        margin: 0;
+        font-size: 1.5em;
+        color: #E93345;
+    }
+    h2 {
+        color: #FF9933;
+    }
+    .hide {
+        display: none;
+    }
+    img {
+        max-width: 50px;
+    }
+    code {
+        color: #060;
+    }
+    .nice-table {
+        border-collapse: collapse;
+    }
+    .nice-table th {
+        font-size: 0.9em;
+        text-align: left;
+    }
+    .nice-table td {
+        font-size: 0.9em;
+        border: 1px solid #eee;
+        padding: 4px 12px;
+        background-color: #e6e6e6;
+    }
+    .nice-table tr:nth-of-type(2n) td {
+        background-color: #fff;
+    }
+</style>
+<!--[if lt IE 9]><script src='http://cdn.jsdelivr.net/html5shiv/latest/html5shiv.min.js'></script><![endif]-->
+
+<h1>All data types of schema.org in one page</h1>
+
+<h2>Person(People)</h2>
+
+<h3>Minimum</h3>
+<ul>
+    <li><code>title</code> or <code>role</code>
+    </li>
+    <li><code>affiliation</code> (<code>org</code>)</li>
+    <li><code>address</code>
+    </li>
+</ul>
+
+<table class="nice-table">
+    <tbody>
+        <tr>
+            <td><strong>Property</strong>
+            </td>
+            <td><strong>Description</strong>
+            </td>
+        </tr>
+        <tr>
+            <td><code><strong>name</strong></code> (<code><strong>fn</strong></code>)</td>
+            <td>Name</td>
+        </tr>
+        <tr>
+            <td><code>nickname</code>
+            </td>
+            <td>Nickname</td>
+        </tr>
+        <tr>
+            <td><code>photo</code>
+            </td>
+            <td>An image link</td>
+        </tr>
+        <tr>
+            <td><code>title</code>
+            </td>
+            <td>The person's title (for example, Financial Manager)</td>
+        </tr>
+        <tr>
+            <td><code>role</code>
+            </td>
+            <td>The person's role (for example, Accountant)</td>
+        </tr>
+        <tr>
+            <td><code>url</code>
+            </td>
+            <td>Link to a web page, such as the person's home page</td>
+        </tr>
+        <tr>
+            <td><code>affiliation</code> (<code>org</code>)</td>
+            <td>The name of an organization with which the person is associated (for example, an employer). If <code>fn</code> and <code>org</code> have the exact same value, Google will interpret the information as referring to a business or organization, not a person.</td>
+        </tr>
+        <tr>
+            <td><code>friend</code>
+            </td>
+            <td>Identifies a social relationship between the person described and another person.
+            </td>
+        </tr>
+        <tr>
+            <td><code>contact</code>
+            </td>
+            <td>
+                Identifies a social relationship between the person described and another person.
+            </td>
+        </tr>
+        <tr>
+            <td><code>acquaintance</code>
+            </td>
+            <td>Identifies a social relationship between the person described and another person.
+            </td>
+        </tr>
+        <tr>
+            <td><code>address</code> (<code>adr</code>)</td>
+            <td>The location of the person. Can have the subproperties <code>street-address</code>, <code>locality</code>, <code>region</code>, <code>postal-code</code>, and <code>country-name</code>.</td>
+        </tr>
+    </tbody>
+</table>
+
+<h3>Sample (switch to source code here)</h3>
+<div itemscope itemtype="http://data-vocabulary.org/Person">
+    My name is <span itemprop="name">Arthur</span>, but people call me <span itemprop="nickname">Ikeagold</span>. Here is my homepage:
+    <a href="http://ikeagold.github.io" itemprop="url">ikeagold.github.io</a>. I live in
+    <span itemprop="address" itemscope itemtype="http://data-vocabulary.org/Address">
+        <span itemprop="locality">New York</span>,
+    <span itemprop="region">NY</span> 
+    </span>
+    and work as an <span itemprop="title">web-dev</span>
+    at <span itemprop="affiliation">FlickShine corp</span>. My friends:
+    <a href="http://flickshine.com" rel="friend">Maxim</a>,
+    <a href="http://flickshine.com" rel="friend">Andrew</a>
+</div>
+
+<br/>
+<h2>Products</h2>
+<p>A Product can include an Offer or Offer-aggregate; or an Offer or Offer-aggregate can include one or more Products. Use the structure that works best for your content. Properties in <strong>bold</strong> are required.</p>
+
+<h4>Product</h4>
+<table class="nice-table">
+    <tbody>
+        <tr>
+            <th>
+                Property</th>
+            <th>
+                Description</th>
+        </tr>
+        <tr>
+            <td>
+                <code><strong>name</strong></code>
+            </td>
+            <td>
+                The name of the product.</td>
+        </tr>
+        <tr>
+            <td>
+                <code>image</code>
+            </td>
+            <td>
+                The URL of a product photo.</td>
+        </tr>
+        <tr>
+            <td>
+                <code>description</code>
+            </td>
+            <td>
+                Product description.</td>
+        </tr>
+        <tr>
+            <td>
+                <code>brand</code>
+            </td>
+            <td>
+                The brand of the product. Can include nested <a href="https://support.google.com/webmasters/answer/answer.py?answer=146861">organization</a> info. Google recommends including <code>brand</code> and at least one <code>identifier</code> for each product.</td>
+        </tr>
+        <tr>
+            <td>
+                <code>category</code>
+            </td>
+            <td>
+                The product category—for example, "<code>Books-Fiction</code>", "<code>Tools</code>", or "<code>Cars</code>". You can include multiple categories. Any value is accepted, but Google recognizes the categories described <a href="http://www.google.com/support/merchants/bin/answer.py?answer=160081">in this article</a>.</td>
+        </tr>
+        <tr>
+            <td>
+                <code>review</code>
+            </td>
+            <td>
+                A nested <a href="https://support.google.com/webmasters/answer/answer.py?answer=146645">Review-aggregate</a> of the product (for example, the average rating). If there are multiple reviews of the product, mark up aggregated review data (for example, the average rating from all users) using Review-aggregate rather than individual reviews.</td>
+        </tr>
+        <tr>
+            <td>
+                <code>identifier</code>
+            </td>
+            <td>
+                The product identifier. Google recommends including <code>brand</code> and at least one <code>identifier</code> for each product.
+                <p>Recognized types include:</p>
+                <ul>
+                    <li><code>asin</code>
+                    </li>
+                    <li><code>isbn</code>
+                    </li>
+                    <li><code>mpn</code>
+                    </li>
+                    <li><code>sku</code>
+                    </li>
+                    <li><code>upc</code>
+                    </li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <code>offerDetails</code>
+            </td>
+            <td>
+                An offer to sell the product. Includes a nested <a href="https://support.google.com/webmasters/answer/146750?hl=en&ref_topic=4599102#offer_properties">Offer</a> or <a href="https://support.google.com/webmasters/answer/146750?hl=en&ref_topic=4599102#offer-aggregate_properties">Offer-aggregate</a>.</td>
+        </tr>
+    </tbody>
+</table>
+
+<h4>Offer</h4>
+<table class="nice-table">
+    <tbody>
+        <tr>
+            <th>
+                Property</th>
+            <th>
+                Description</th>
+        </tr>
+        <tr>
+            <td>
+                <code><strong>price</strong></code>
+            </td>
+            <td>
+                The price of the product. A floating point number. You may use either a decimal point ('.') or a comma (',') as a separator.</td>
+        </tr>
+        <tr>
+            <td>
+                <strong><code>priceCurrency</code></strong>
+            </td>
+            <td>
+                The currency used to describe the product price, in <a href="http://www.iso.org/iso/support/faqs/faqs_widely_used_standards/widely_used_standards_other/currency_codes.htm">three-letter ISO</a> format.</td>
+        </tr>
+        <tr>
+            <td>
+                <code>priceValidUntil</code>
+            </td>
+            <td>
+                The date (in <a href="http://www.iso.org/iso/date_and_time_format">ISO date format</a>) after which the price will no longer be available.&nbsp;(Your product snippet may not display if the priceValidUntil property indicates a past date.)</td>
+        </tr>
+        <tr>
+            <td>
+                <code>seller</code>
+            </td>
+            <td>
+                The seller of the product. Can contain a <a href="https://support.google.com/webmasters/answer/answer.py?hl=en&answer=146646">Person</a> or <a href="https://support.google.com/webmasters/answer/answer.py?hl=en&answer=146646">Organization</a>.</td>
+        </tr>
+        <tr>
+            <td>
+                <code>condition</code>
+            </td>
+            <td>
+                Any text may be specified. If the <code>condition</code> attribute is used, the value of the <code>content</code> attribute must be one of the following recognized values:
+                <ul>
+                    <li><code>new</code>
+                    </li>
+                    <li><code>used</code>
+                    </li>
+                    <li><code>refurbished</code>
+                    </li>
+                </ul>
+                <p>For example:</p>
+                <pre>&lt;span itemprop="condition" content="new"&gt;Brand new!&lt;/span&gt;</pre>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <code>availability</code>
+            </td>
+            <td>
+                Any text may be specified, but the value of the <code>content</code> attribute must be one of the following recognized values:
+                <ul>
+                    <li><code>out_of_stock</code>
+                    </li>
+                    <li><code>in_stock</code>
+                    </li>
+                    <li><code>instore_only</code>
+                    </li>
+                    <li><code>preorder</code>
+                    </li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <code>quantity</code>
+            </td>
+            <td>
+                The number of items available for this offer.</td>
+        </tr>
+        <tr>
+            <td>
+                <code>offerURL</code>
+            </td>
+            <td>
+                A URL to the product web page (that includes the Offer). (Don't use <code>offerURL</code> for markup that appears on the product page itself.)</td>
+        </tr>
+        <tr>
+            <td>
+                <code>identifier</code>
+            </td>
+            <td>
+                The product identifier. Google recommends including <code>brand</code> and at least one <code>identifier</code> for each product.
+                <p>Recognized types include:</p>
+                <ul>
+                    <li><code>asin</code>
+                    </li>
+                    <li><code>isbn</code>
+                    </li>
+                    <li><code>mpn</code>
+                    </li>
+                    <li><code>upc</code>
+                    </li>
+                    <li><code>sku</code>
+                    </li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <code>itemOffered</code>
+            </td>
+            <td>
+                The item being sold. Typically, this includes a nested Product, but it can also contain other item types or free text.</td>
+        </tr>
+    </tbody>
+</table>
+
+<h4>Offer-aggregate</h4>
+<table class="nice-table">
+    <tbody>
+        <tr>
+            <th>
+                Property</th>
+            <th>
+                Description</th>
+        </tr>
+        <tr>
+            <td>
+                <code><strong>lowPrice</strong></code>
+            </td>
+            <td>
+                The lowest price of all offers available. Floating point number.</td>
+        </tr>
+        <tr>
+            <td>
+                <code>highPrice</code>
+            </td>
+            <td>
+                The highest price of all offers available. Floating point number.</td>
+        </tr>
+        <tr>
+            <td>
+                <code><strong>priceCurrency</strong></code>
+            </td>
+            <td>
+                The currency used to describe the product price, in <a href="http://http://www.iso.org/iso/support/faqs/faqs_widely_used_standards/widely_used_standards_other/currency_codes.htm">three-letter ISO</a> format.</td>
+        </tr>
+        <tr>
+            <td>
+                <code>offerCount</code>
+            </td>
+            <td>
+                The number of offers for the product.</td>
+        </tr>
+        <tr>
+            <td>
+                <code>condition</code>
+            </td>
+            <td>
+                Any text may be specified, but the value of the content attribute must be one of the following recognized values:
+                <ul>
+                    <li><code>new</code>
+                    </li>
+                    <li><code>used</code>
+                    </li>
+                    <li><code>refurbished</code>
+                    </li>
+                </ul>
+                <p>For example:</p>
+                <pre>&lt;span itemprop="condition" content="new"&gt;Brand new!&lt;/span&gt;</pre>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <code>offerURL</code>
+            </td>
+            <td>
+                A URL to the product web page (that includes the Offer or Offer-aggregate). (Don't use <code>offerURL</code> for markup that appears on the product page itself.)</td>
+        </tr>
+        <tr>
+            <td>
+                <code>identifier</code>
+            </td>
+            <td>
+                The product identifier. Google recommends including <code>brand</code> and at least one <code>identifier</code> for each product.
+                <p>Recognized types include:</p>
+                <ul>
+                    <li><code>asin</code>
+                    </li>
+                    <li><code>isbn</code>
+                    </li>
+                    <li><code>mpn</code>
+                    </li>
+                    <li><code>upc</code>
+                    </li>
+                    <li><code>sku</code>
+                    </li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <code>itemOffered</code>
+            </td>
+            <td>
+                The item being sold. Typically, this includes a nested Product, but it can also contain other item types or free text.</td>
+        </tr>
+    </tbody>
+</table>
+
+<h3>Sample (switch to source code here)</h3>
+<div itemscope itemtype="http://data-vocabulary.org/Product">
+    <span itemprop="brand">ACME</span>  <span itemprop="name">Executive
+        Anvil</span>
+    <img itemprop="image" alt="" src="https://octodex.github.com/images/inspectocat.jpg" />
+
+    <span itemprop="description">Sleeker than ACME's Classic Anvil, the 
+        Executive Anvil is perfect for the business traveler
+        looking for something to drop from a height.
+      </span>
+    Category: <span itemprop="category" content="Hardware > Tools > Anvils">Anvils</span>
+    Product #: <span itemprop="identifier" content="mpn:925872">
+        925872</span>
+    <span itemprop="review" itemscope itemtype="http://data-vocabulary.org/Review-aggregate">
+        <span itemprop="rating">4.4</span> stars, based on <span itemprop="count">89
+          </span> reviews
+    </span>
+
+    <span itemprop="offerDetails" itemscope itemtype="http://data-vocabulary.org/Offer">
+        Regular price: $179.99
+        <meta itemprop="priceCurrency" content="USD" />
+        $<span itemprop="price">119.99</span>
+    (Sale ends
+    <time itemprop="priceValidUntil" datetime="2020-11-05">
+        5 November!</time>) Available from: <span itemprop="seller">Executive Objects</span>
+    Condition: <span itemprop="condition" content="used">Previously owned, 
+          in excellent condition</span>
+    <span itemprop="availability" content="in_stock">In stock! Order now!</span>
+    </span>
+</div>
+
+<br/>
+<h2>Organizations</h2>
+<p>Google recognizes the following organization properties. In general, you can use the same schema.org property name in both RDFa and Microdata. In several cases where the RDFa/Microdata and microformats property names differ, the microformats property name appears in parentheses. Properties in <strong>bold</strong> are required for Google Rich Snippets.</p>
+
+<table class="nice-table">
+    <tbody>
+        <tr>
+            <td><strong>Property</strong>
+            </td>
+            <td><strong>Description</strong>
+            </td>
+        </tr>
+        <tr>
+            <td><code><strong>name</strong>(<strong>fn</strong>/<strong>org</strong>)</code>
+            </td>
+            <td>The name of the business. If you use microformats, you should use both <code>fn</code> and <code>org</code>, and ensure that these have the same value.</td>
+        </tr>
+        <tr>
+            <td><code>url</code>
+            </td>
+            <td>Link to the organization home page.</td>
+        </tr>
+        <tr>
+            <td><code>address</code> (<code>adr</code>)</td>
+            <td>The location of the business, described as a separate <code>PostalAddress</code> entity which can have properties including <code>streetAddress</code>, <code>addressLocality</code>, <code>addressRegion</code>, <code>postalCode</code>, and <code>addressCountry</code>. (In microformats these are named <code>street-address</code>, <code>locality</code>, <code>region</code>, <code>postal-code</code>, and <code>country-name</code>.)</td>
+        </tr>
+        <tr>
+            <td><code>telephone</code> (<code>tel</code>)</td>
+            <td>The telephone number of the business or organization.</td>
+        </tr>
+        <tr>
+            <td><code>location</code> (<code>geo</code>)</td>
+            <td>The geolocation of an <code>Organization</code> (or <code>Event</code>). Typically used with <code>latitude</code> and <code>longitude</code> properties; examples below for details.</td>
+        </tr>
+        <tr>
+            <td><code>logo</code>
+            </td>
+            <td>URL of an image for the logo of the business or organization.</td>
+        </tr>
+    </tbody>
+</table>
+
+<h3>Sample (switch to source code here)</h3>
+<div itemscope itemtype="http://schema.org/Organization">
+    <span itemprop="name">L'Amourita Pizza</span> Located at
+    <div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+        <span itemprop="streetAddress">123 Main St</span>,
+        <span itemprop="addressLocality">Albuquerque</span>,
+        <span itemprop="addressRegion">NM</span>.
+    </div>
+    <img itemprop="logo" alt="" src="https://octodex.github.com/images/inspectocat.jpg" />Phone: <span itemprop="telephone">206-555-1234</span>
+    <a href="http://ikeagold.github.io/" itemprop="url">http://ikeagold.github.io</a>
+</div>
+
+<br/>
+<h2>Image</h2>
+<h3>Sample</h3>
+<div itemscope itemtype="http://schema.org/ImageObject">
+    <p itemprop="name">Inspectocat</p>
+    <img alt="" src="https://octodex.github.com/images/inspectocat.jpg" itemprop="contentUrl" />
+    <br/>
+    <span itemprop="description">Want see more? go to: octodex.github.com :)</span>
+</div>
+
+<br/>©2014 Google <a href="http://www.google.com/intl/en/privacy.html">Privacy Policy</a>  <a href="http://www.google.com/accounts/TOS">Terms of Service</a>
+
+</html>
