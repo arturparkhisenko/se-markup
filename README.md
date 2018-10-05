@@ -1,27 +1,25 @@
-All data types of schema.org in one page
-=========
+# All data types of schema.org in one page
 
-I prefer [schema.org] because its supported all SE (google,yahoo,yandex,bing)
+I prefer [schema.org](https://schema.org/) because its supported by all search engines (google, yahoo, yandex, bing)
 
-###Other standards (rich snippets and structured data types):
-* http://ogp.me/
-* http://microformats.org/
-* http://ru.wikipedia.org/wiki/RDF
-* http://json-ld.org/
+### Other standards (rich snippets and structured data types):
 
-##What's included
-* Person(People)
-* Products
-* Organizations
-* Image
+- [ogp.me](http://ogp.me/)
+- [microformats.org](http://microformats.org/)
+- [w3.org/TR/rdfa-core](https://www.w3.org/TR/rdfa-core/)
+- [w3.org/TR/microdata](https://www.w3.org/TR/microdata/)
+- [json-ld.org](https://json-ld.org/)
 
-###Validated by
-* https://www.google.ru/webmasters/tools/richsnippets
-* http://webmaster.yandex.ua/microtest.xml
+## What's included
 
-License
-----
+- Person(People)
+- Products
+- Organizations
+- Image
 
-MIT
+### Validators
 
-[schema.org]:http://schema.org/
+- [search.google.com/structured-data/testing-tool](https://search.google.com/structured-data/testing-tool/u/0/)
+- [webmaster.yandex.ru/tools/microtest](https://webmaster.yandex.ru/tools/microtest/)
+
+## License MIT
