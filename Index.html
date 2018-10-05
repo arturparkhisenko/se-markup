@@ -246,7 +246,7 @@
         </tr>
         <tr>
             <td>
-                <strong><code>priceCurrency</code></strong>
+                <strong><code>currency</code></strong>
             </td>
             <td>
                 The currency used to describe the product price, in <a href="http://www.iso.org/iso/support/faqs/faqs_widely_used_standards/widely_used_standards_other/currency_codes.htm">three-letter ISO</a> format.</td>
@@ -371,7 +371,7 @@
         </tr>
         <tr>
             <td>
-                <code><strong>priceCurrency</strong></code>
+                <code><strong>currency</strong></code>
             </td>
             <td>
                 The currency used to describe the product price, in <a href="http://http://www.iso.org/iso/support/faqs/faqs_widely_used_standards/widely_used_standards_other/currency_codes.htm">three-letter ISO</a> format.</td>
@@ -440,35 +440,22 @@
 </table>
 
 <h3>Sample (switch to source code here)</h3>
-<div itemscope itemtype="http://data-vocabulary.org/Product">
-    <span itemprop="brand">ACME</span>  <span itemprop="name">Executive
-        Anvil</span>
-    <img itemprop="image" alt="" src="https://octodex.github.com/images/inspectocat.jpg" />
-
-    <span itemprop="description">Sleeker than ACME's Classic Anvil, the 
-        Executive Anvil is perfect for the business traveler
-        looking for something to drop from a height.
-      </span>
-    Category: <span itemprop="category" content="Hardware > Tools > Anvils">Anvils</span>
-    Product #: <span itemprop="identifier" content="mpn:925872">
-        925872</span>
-    <span itemprop="review" itemscope itemtype="http://data-vocabulary.org/Review-aggregate">
-        <span itemprop="rating">4.4</span> stars, based on <span itemprop="count">89
-          </span> reviews
-    </span>
-
-    <span itemprop="offerDetails" itemscope itemtype="http://data-vocabulary.org/Offer">
-        Regular price: $179.99
-        <meta itemprop="priceCurrency" content="USD" />
-        $<span itemprop="price">119.99</span>
-    (Sale ends
-    <time itemprop="priceValidUntil" datetime="2020-11-05">
-        5 November!</time>) Available from: <span itemprop="seller">Executive Objects</span>
-    Condition: <span itemprop="condition" content="used">Previously owned, 
-          in excellent condition</span>
-    <span itemprop="availability" content="in_stock">In stock! Order now!</span>
-    </span>
-</div>
+<span itemscope itemtype="http://schema.org/Review">
+  <span itemprop="itemReviewed" itemscope itemtype="http://schema.org/Thing">
+    <span itemprop="name">Super Book</span>
+  </span>
+  <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <span itemprop="name">Joe</span>
+  </span>
+  <span itemprop="reviewRating" itemscope itemtype="http://schema.org/Rating">
+  Rating:
+    <span itemprop="ratingValue">7</span> out of
+    <span itemprop="bestRating">10</span>
+  </span>
+  <span itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+    <meta itemprop="name" content="Washington Times">
+  </span>
+</span>
 
 <br/>
 <h2>Organizations</h2>
@@ -534,6 +521,6 @@
     <span itemprop="description">Want see more? go to: octodex.github.com :)</span>
 </div>
 
-<br/>©2014 Google <a href="http://www.google.com/intl/en/privacy.html">Privacy Policy</a>  <a href="http://www.google.com/accounts/TOS">Terms of Service</a>
+<br/>©2018 Google <a href="http://www.google.com/intl/en/privacy.html">Privacy Policy</a>  <a href="http://www.google.com/accounts/TOS">Terms of Service</a>
 
 </html>
