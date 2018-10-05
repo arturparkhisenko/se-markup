@@ -1,6 +1,8 @@
 # All data types of schema.org in one page
 
-I prefer [schema.org](https://schema.org/) because its supported by all search engines (google, yahoo, yandex, bing)
+I prefer [schema.org](https://schema.org/) because its supported by all search engines (google, yahoo, yandex, bing).
+
+A lot of google examples and guides here [developers.google.com/search/docs/guides](https://developers.google.com/search/docs/guides/)
 
 ### Other standards (rich snippets and structured data types):
 
